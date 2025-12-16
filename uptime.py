@@ -246,16 +246,23 @@ def main():
         component_stats,
     ) = compute_uptime(args.days)
 
+    def round_pct3(p: float) -> float:
+        # Keep display + comparisons consistent with the macOS app.
+        return round(p, 3)
+
+    uptime_pct_r = round_pct3(uptime_pct)
+    target_r = round_pct3(args.target_uptime) if args.target_uptime is not None else None
+
     print(f"Window length: {args.days} days")
     print(
         "Total recorded downtime: "
         f"{total_downtime} ({total_downtime.total_seconds() / 60:.2f} minutes)"
     )
-    if args.target_uptime is not None:
-        print(f"Required uptime target: {args.target_uptime:.5f}%")
+    if target_r is not None:
+        print(f"Required uptime target: {target_r:.3f}%")
 
-    overall_line = f"Overall uptime: {uptime_pct:.5f}%"
-    if args.target_uptime is not None and uptime_pct < args.target_uptime:
+    overall_line = f"Overall uptime: {uptime_pct_r:.3f}%"
+    if target_r is not None and uptime_pct_r < target_r:
         overall_line = f"{RED}{overall_line}{RESET}"
     print(overall_line)
 
@@ -278,14 +285,12 @@ def main():
         for comp in sorted(component_stats.keys()):
             stats = component_stats[comp]
             dt = stats["downtime"]
+            comp_uptime_r = round_pct3(stats["uptime_pct"])
             line = (
-                f"  {comp}: uptime {stats['uptime_pct']:.5f}% "
+                f"  {comp}: uptime {comp_uptime_r:.3f}% "
                 f"(downtime {dt} / {dt.total_seconds() / 60:.2f} minutes)"
             )
-            if (
-                args.target_uptime is not None
-                and stats["uptime_pct"] < args.target_uptime
-            ):
+            if target_r is not None and comp_uptime_r < target_r:
                 line = f"{RED}{line}{RESET}"
             print(line)
     else:

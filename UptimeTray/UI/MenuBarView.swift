@@ -1,6 +1,10 @@
 import AppKit
 import SwiftUI
 
+private func roundPct3(_ pct: Double) -> Double {
+    (pct * 1000).rounded() / 1000
+}
+
 final class UptimeViewModel: ObservableObject {
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var lastUpdated: Date?
@@ -18,13 +22,14 @@ final class UptimeViewModel: ObservableObject {
     var targetUptimePct: Double? {
         let trimmed = targetUptimePctString.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return nil }
-        return Double(trimmed)
+        guard let parsed = Double(trimmed) else { return nil }
+        return roundPct3(parsed)
     }
 
     var menuBarTitle: String {
         if isLoading, summary == nil { return "--" }
         guard let pct = summary?.uptimePct else { return "--" }
-        return String(format: "%.3f%%", pct)
+        return String(format: "%.3f%%", roundPct3(pct))
     }
 
     func start() {
@@ -108,7 +113,8 @@ struct MenuBarView: View {
     private var summaryBlock: some View {
         if let s = model.summary {
             let target = model.targetUptimePct
-            let overallIsBad = (target != nil && s.uptimePct < target!)
+            let overallPct = roundPct3(s.uptimePct)
+            let overallIsBad = (target != nil && overallPct < target!)
 
             VStack(alignment: .leading, spacing: 6) {
                 Text("Window length: \(s.windowDays) days")
@@ -119,12 +125,12 @@ struct MenuBarView: View {
                     .font(.subheadline)
 
                 if let t = target {
-                    Text(String(format: "Required uptime target: %.5f%%", t))
+                    Text(String(format: "Required uptime target: %.3f%%", t))
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
 
-                Text(String(format: "Overall uptime: %.5f%%", s.uptimePct))
+                Text(String(format: "Overall uptime: %.3f%%", overallPct))
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(overallIsBad ? .red : .primary)
 
@@ -147,8 +153,9 @@ struct MenuBarView: View {
 
                     ForEach(s.componentStats.keys.sorted(), id: \.self) { comp in
                         if let stats = s.componentStats[comp] {
-                            let isBad = (target != nil && stats.uptimePct < target!)
-                            Text("  \(comp): uptime \(String(format: "%.5f", stats.uptimePct))% (downtime \(formatDuration(stats.downtime)) / \(String(format: "%.2f", stats.downtime / 60)) minutes)")
+                            let compPct = roundPct3(stats.uptimePct)
+                            let isBad = (target != nil && compPct < target!)
+                            Text("  \(comp): uptime \(String(format: "%.3f", compPct))% (downtime \(formatDuration(stats.downtime)) / \(String(format: "%.2f", stats.downtime / 60)) minutes)")
                                 .font(.caption)
                                 .foregroundStyle(isBad ? .red : .primary)
                         }
