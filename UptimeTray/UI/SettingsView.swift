@@ -21,7 +21,7 @@ struct SettingsView: View {
 
     private var header: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Settings")
+            Label("Settings", systemImage: AppIcon.settings)
                 .font(.title2.weight(.semibold))
             Text("Tune the rolling window and optional alert threshold used by the menu bar summary.")
                 .font(.subheadline)
@@ -31,7 +31,7 @@ struct SettingsView: View {
     }
 
     private var windowSection: some View {
-        Section("Window") {
+        Section {
             LabeledContent("Look back") {
                 Stepper(value: $windowDays, in: 1...365) {
                     Text("\(windowDays) day\(windowDays == 1 ? "" : "s")")
@@ -43,11 +43,13 @@ struct SettingsView: View {
             Text("Uptime is computed over the last \(windowDays) day\(windowDays == 1 ? "" : "s").")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+        } header: {
+            Label("Window", systemImage: AppIcon.window)
         }
     }
 
     private var targetSection: some View {
-        Section("Target uptime (optional)") {
+        Section {
             LabeledContent("Threshold") {
                 HStack(spacing: 8) {
                     TextField("99.95000", text: $targetUptimePctString)
@@ -66,6 +68,8 @@ struct SettingsView: View {
             Text("If set, any overall/component uptime below this value is shown in red. Leave blank to disable.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
+        } header: {
+            Label("Target uptime (optional)", systemImage: AppIcon.target)
         }
     }
 
@@ -75,6 +79,9 @@ struct SettingsView: View {
                 windowDays = UptimeCalculator.defaultWindowDays
                 targetUptimePctString = ""
             }
+            .labelStyle(.titleAndIcon)
+        } header: {
+            Label("Actions", systemImage: AppIcon.reset)
         }
     }
 

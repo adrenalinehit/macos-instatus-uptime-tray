@@ -5,6 +5,23 @@ private func roundPct3(_ pct: Double) -> Double {
     (pct * 1000).rounded() / 1000
 }
 
+private struct IconRow: View {
+    let systemName: String
+    let text: String
+    var emphasized: Bool = false
+    var iconColor: Color? = nil
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 8) {
+            Image(systemName: systemName)
+                .foregroundStyle(iconColor ?? .secondary)
+                .frame(width: 16)
+            Text(text)
+                .font(emphasized ? .subheadline.weight(.semibold) : .subheadline)
+        }
+    }
+}
+
 final class UptimeViewModel: ObservableObject {
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var lastUpdated: Date?
@@ -99,7 +116,7 @@ struct MenuBarView: View {
 
     private var header: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("BigChange uptime")
+            Label("BigChange uptime", systemImage: AppIcon.app)
                 .font(.headline)
             Spacer()
             if model.isLoading {
@@ -117,22 +134,29 @@ struct MenuBarView: View {
             let overallIsBad = (target != nil && overallPct < target!)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text("Window length: \(s.windowDays) days")
-                    .font(.subheadline)
+                IconRow(systemName: AppIcon.window, text: "Window length: \(s.windowDays) days")
                     .foregroundStyle(.secondary)
 
-                Text("Total recorded downtime: \(formatDuration(s.totalDowntime)) (\(String(format: "%.2f", s.totalDowntime / 60)) minutes)")
-                    .font(.subheadline)
+                IconRow(
+                    systemName: AppIcon.downtime,
+                    text: "Total recorded downtime: \(formatDuration(s.totalDowntime)) (\(String(format: "%.2f", s.totalDowntime / 60)) minutes)"
+                )
 
                 if let t = target {
-                    Text(String(format: "Required uptime target: %.3f%%", t))
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                    IconRow(
+                        systemName: AppIcon.target,
+                        text: String(format: "Required uptime target: %.3f%%", t)
+                    )
+                    .foregroundStyle(.secondary)
                 }
 
-                Text(String(format: "Overall uptime: %.3f%%", overallPct))
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(overallIsBad ? .red : .primary)
+                IconRow(
+                    systemName: AppIcon.uptime,
+                    text: String(format: "Overall uptime: %.3f%%", overallPct),
+                    emphasized: true,
+                    iconColor: overallIsBad ? .red : nil
+                )
+                .foregroundStyle(overallIsBad ? .red : .primary)
 
                 Text("Number of downtime intervals used: \(s.mergedIntervals.count)")
                     .font(.subheadline)
@@ -169,9 +193,13 @@ struct MenuBarView: View {
 
                 if let updated = model.lastUpdated {
                     Divider().padding(.vertical, 4)
-                    Text("Last updated: \(updated.formatted(date: .abbreviated, time: .standard))")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    HStack(spacing: 6) {
+                        Image(systemName: AppIcon.lastUpdated)
+                            .foregroundStyle(.secondary)
+                        Text("Last updated: \(updated.formatted(date: .abbreviated, time: .standard))")
+                    }
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                 }
             }
         } else {
@@ -183,13 +211,25 @@ struct MenuBarView: View {
 
     private var actions: some View {
         HStack {
-            Button("Refresh") { model.refresh() }
-            Button("Open status page") { model.openStatusPage() }
+            Button {
+                model.refresh()
+            } label: {
+                Label("Refresh", systemImage: AppIcon.refresh)
+            }
+            Button {
+                model.openStatusPage()
+            } label: {
+                Label("Open status page", systemImage: AppIcon.statusPage)
+            }
             SettingsLink {
-                Text("Settings…")
+                Label("Settings…", systemImage: AppIcon.settings)
             }
             Spacer()
-            Button("Quit") { NSApplication.shared.terminate(nil) }
+            Button {
+                NSApplication.shared.terminate(nil)
+            } label: {
+                Label("Quit", systemImage: AppIcon.quit)
+            }
         }
         .buttonStyle(.borderless)
     }
