@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 71;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA1111111111111111111111 /* UptimeTrayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000001 /* UptimeTrayApp.swift */; };
+		AA1111111111111111111112 /* Core/Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000002 /* Core/Models.swift */; };
+		AA1111111111111111111113 /* Core/RssClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000003 /* Core/RssClient.swift */; };
+		AA1111111111111111111114 /* Core/RssParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000004 /* Core/RssParser.swift */; };
+		AA1111111111111111111115 /* Core/UptimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000005 /* Core/UptimeCalculator.swift */; };
+		AA1111111111111111111116 /* UI/MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000006 /* UI/MenuBarView.swift */; };
+		AA1111111111111111111117 /* UI/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000007 /* UI/SettingsView.swift */; };
+		AA1111111111111111111120 /* DurationParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000010 /* DurationParsingTests.swift */; };
+		AA1111111111111111111121 /* UptimeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000011 /* UptimeCalculatorTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA3000000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA0000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA0000000000000000000002;
+			remoteInfo = UptimeTray;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AA2000000000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000001 /* UptimeTrayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UptimeTrayApp.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000002 /* Core/Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/Models.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000003 /* Core/RssClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/RssClient.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000004 /* Core/RssParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/RssParser.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000005 /* Core/UptimeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core/UptimeCalculator.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000006 /* UI/MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/MenuBarView.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000007 /* UI/SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/SettingsView.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000008 /* UptimeTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = UptimeTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2000000000000000000009 /* UptimeTrayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = UptimeTrayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2000000000000000000010 /* DurationParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DurationParsingTests.swift; path = ../UptimeTrayTests/DurationParsingTests.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000011 /* UptimeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UptimeCalculatorTests.swift; path = ../UptimeTrayTests/UptimeCalculatorTests.swift; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA4000000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA4000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA5000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				AA2000000000000000000000 /* Info.plist */,
+				AA2000000000000000000001 /* UptimeTrayApp.swift */,
+				AA5000000000000000000002 /* Core */,
+				AA5000000000000000000003 /* UI */,
+				AA5000000000000000000004 /* UptimeTrayTests */,
+				AA6000000000000000000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA5000000000000000000002 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AA2000000000000000000002 /* Core/Models.swift */,
+				AA2000000000000000000003 /* Core/RssClient.swift */,
+				AA2000000000000000000004 /* Core/RssParser.swift */,
+				AA2000000000000000000005 /* Core/UptimeCalculator.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AA5000000000000000000003 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AA2000000000000000000006 /* UI/MenuBarView.swift */,
+				AA2000000000000000000007 /* UI/SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		AA5000000000000000000004 /* UptimeTrayTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA2000000000000000000010 /* DurationParsingTests.swift */,
+				AA2000000000000000000011 /* UptimeCalculatorTests.swift */,
+			);
+			name = UptimeTrayTests;
+			sourceTree = "<group>";
+		};
+		AA6000000000000000000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA2000000000000000000008 /* UptimeTray.app */,
+				AA2000000000000000000009 /* UptimeTrayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA0000000000000000000002 /* UptimeTray */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8000000000000000000001 /* Build configuration list for PBXNativeTarget "UptimeTray" */;
+			buildPhases = (
+				AA7000000000000000000001 /* Sources */,
+				AA4000000000000000000001 /* Frameworks */,
+				AA7000000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UptimeTray;
+			productName = UptimeTray;
+			productReference = AA2000000000000000000008 /* UptimeTray.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AA0000000000000000000003 /* UptimeTrayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8000000000000000000002 /* Build configuration list for PBXNativeTarget "UptimeTrayTests" */;
+			buildPhases = (
+				AA7000000000000000000003 /* Sources */,
+				AA4000000000000000000002 /* Frameworks */,
+				AA7000000000000000000004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA9000000000000000000001 /* PBXTargetDependency */,
+			);
+			name = UptimeTrayTests;
+			productName = UptimeTrayTests;
+			productReference = AA2000000000000000000009 /* UptimeTrayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA0000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					AA0000000000000000000002 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					AA0000000000000000000003 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = AA0000000000000000000002;
+					};
+				};
+			};
+			buildConfigurationList = AA8000000000000000000000 /* Build configuration list for PBXProject "UptimeTray" */;
+			compatibilityVersion = "Xcode 16.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA5000000000000000000001;
+			productRefGroup = AA6000000000000000000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA0000000000000000000002 /* UptimeTray */,
+				AA0000000000000000000003 /* UptimeTrayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA7000000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7000000000000000000004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA7000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111111 /* UptimeTrayApp.swift in Sources */,
+				AA1111111111111111111112 /* Core/Models.swift in Sources */,
+				AA1111111111111111111113 /* Core/RssClient.swift in Sources */,
+				AA1111111111111111111114 /* Core/RssParser.swift in Sources */,
+				AA1111111111111111111115 /* Core/UptimeCalculator.swift in Sources */,
+				AA1111111111111111111116 /* UI/MenuBarView.swift in Sources */,
+				AA1111111111111111111117 /* UI/SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7000000000000000000003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111120 /* DurationParsingTests.swift in Sources */,
+				AA1111111111111111111121 /* UptimeCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA9000000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA0000000000000000000002 /* UptimeTray */;
+			targetProxy = AA3000000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AA8100000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UptimeTray;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA8100000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UptimeTray;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AA8200000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UptimeTrayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UptimeTray.app/Contents/MacOS/UptimeTray";
+			};
+			name = Debug;
+		};
+		AA8200000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.UptimeTrayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UptimeTray.app/Contents/MacOS/UptimeTray";
+			};
+			name = Release;
+		};
+		AA8300000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA8300000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA8000000000000000000000 /* Build configuration list for PBXProject "UptimeTray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8300000000000000000001 /* Debug */,
+				AA8300000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8000000000000000000001 /* Build configuration list for PBXNativeTarget "UptimeTray" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8100000000000000000001 /* Debug */,
+				AA8100000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8000000000000000000002 /* Build configuration list for PBXNativeTarget "UptimeTrayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8200000000000000000001 /* Debug */,
+				AA8200000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA0000000000000000000001 /* Project object */;
+}
