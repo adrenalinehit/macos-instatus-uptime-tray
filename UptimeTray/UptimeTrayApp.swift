@@ -9,11 +9,11 @@ struct UptimeTrayApp: App {
             MenuBarView(model: model)
                 .onAppear { model.start() }
         } label: {
-            Label {
+            HStack(spacing: 4) {
+                Image(systemName: AppIcon.app)
+                    .imageScale(.medium)
                 Text(model.menuBarTitle)
                     .monospacedDigit()
-            } icon: {
-                Image(systemName: AppIcon.app)
             }
         }
         .menuBarExtraStyle(.window)
