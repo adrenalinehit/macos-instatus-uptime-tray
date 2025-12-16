@@ -14,6 +14,7 @@
 		AA1111111111111111111115 /* Core/UptimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000005 /* Core/UptimeCalculator.swift */; };
 		AA1111111111111111111116 /* UI/MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000006 /* UI/MenuBarView.swift */; };
 		AA1111111111111111111117 /* UI/SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000007 /* UI/SettingsView.swift */; };
+		AA1111111111111111111118 /* UI/AppIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000012 /* UI/AppIcons.swift */; };
 		AA1111111111111111111120 /* DurationParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000010 /* DurationParsingTests.swift */; };
 		AA1111111111111111111121 /* UptimeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2000000000000000000011 /* UptimeCalculatorTests.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		AA2000000000000000000009 /* UptimeTrayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = UptimeTrayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2000000000000000000010 /* DurationParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DurationParsingTests.swift; path = ../UptimeTrayTests/DurationParsingTests.swift; sourceTree = SOURCE_ROOT; };
 		AA2000000000000000000011 /* UptimeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UptimeCalculatorTests.swift; path = ../UptimeTrayTests/UptimeCalculatorTests.swift; sourceTree = SOURCE_ROOT; };
+		AA2000000000000000000012 /* UI/AppIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI/AppIcons.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				AA2000000000000000000006 /* UI/MenuBarView.swift */,
 				AA2000000000000000000007 /* UI/SettingsView.swift */,
+				AA2000000000000000000012 /* UI/AppIcons.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				AA1111111111111111111115 /* Core/UptimeCalculator.swift in Sources */,
 				AA1111111111111111111116 /* UI/MenuBarView.swift in Sources */,
 				AA1111111111111111111117 /* UI/SettingsView.swift in Sources */,
+				AA1111111111111111111118 /* UI/AppIcons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
