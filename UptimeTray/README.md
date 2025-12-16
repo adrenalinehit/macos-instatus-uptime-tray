@@ -1,4 +1,4 @@
-# UptimeTray (macOS 13+ Menu Bar App)
+# UptimeTray (macOS 14+ Menu Bar App)
 
 Native macOS menubar app (Swift + SwiftUI `MenuBarExtra`) that mirrors the uptime calculations in [`../uptime.py`](../uptime.py) using the BigChange RSS history feed:
 
